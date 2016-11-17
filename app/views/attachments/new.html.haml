@@ -1,0 +1,9 @@
+= simple_form_for [@attachment], class: 'form-inline' do |f|
+  %br
+  %label.block
+    = "Sube la archivo"
+    = f.file_field :file, label: false
+  .hide
+    = f.input :course_id, input_html: {value: @course_id.id}
+  %br
+  = f.button :submit, class: "btn btn-success"

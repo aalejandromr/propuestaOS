@@ -1,0 +1,9 @@
+Esto es otra prueba.No se utilizará comillas?.
+.Puedo espaciar?.
+.Puedo espaciar?.
+.Eliminar Repetidos.
+.No se pueden ocupar tíldes, no encuentro la manera en la que pueda integrar uft-8 para esto.
+.Por lo visto si puedo usar tíldes, sólo tenía que agregar el key en el for, extraño pero si funciona, funciona
+Entonces si puedo utilizar espacios!!!
+
+.Pero no los reconoce porque el split es en los puntos

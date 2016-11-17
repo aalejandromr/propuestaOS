@@ -1,0 +1,42 @@
+Estructura de datos
+Es una forma particular de organizar datos en una computadora.
+Tipos de estructura de datos
+Arreglos, mapas y colecciones.
+MDI
+Interfaz de multiples documentos.
+ODBC
+Conectividad abierta de Base de Datos.
+Servlet
+Utilizan el modelo petición-respuesta HTTP de comunicación entre cliente y servidor.
+Elementos JSP
+Codigo, directivas y acciones.
+Inserción de código en páginas JSP
+Expresiones <%= %>
+Scriplets <% %>
+Declaraciones <%! %>.
+Sesion
+Es un intercambio de información interactiva semi-permanente.
+Cookies
+Es un archivo creado por un sitio web que contiene pequeñas  cantidades de datos y que se envían entre un emisor y un receptor.
+Patrones de diseño
+Son herramientas para solucionar problemas de diseño enfocados al desarrollo de software, estos patrones deben ser reusables.
+Para que sirven los patrones de diseño
+Reduccion de tiempos, Disminución del esfuerzo de mantenimiento, eficiencia, consistencia, consistencia, fiabilidad, protección de la inversión en desarrollos.
+Clasificacion de los patrones de diseño.
+Patrones de diseño fundamentales.
+Patrones de creación
+muestran la guía de cómo crear objetos cuando sus creaciones requieren tomar decisiones.
+Patrones de partición
+proveen la guía sobre como dividir actores complejos y casos de uso en múltiples clases.
+Patrones estructurales
+describen las formas comunes en que diferentes tipos de objetos pueden ser organizados para trabajar unos con otros.
+Patrones de comportamiento
+son utilizados para organizar, manejar y combinar comportamientos.
+Patrones de concurrencia
+permiten coordinar las operaciones concurrentes. Estos patrones se dirigen principalmente a dos tipos diferentes de problemas.
+Modelo
+Representa la información y los datos procesados por el sistema, gestionando la forma como se accede a estos y la lógica de negocio de la aplicación.
+Controlador
+Representa el puente de interacción entre el Modelo y la Vista, define la forma como se relacionan los componentes de la aplicación.
+Vista
+Es la representación del modelo mediante una interfaz gráfica de usuario, es la forma como el usuario interactúa con el sistema, permitiendo la ejecución de eventos he ingreso de información que serán procesados por el Modelo.

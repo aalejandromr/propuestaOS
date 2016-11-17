@@ -1,0 +1,41 @@
+%html
+  %head
+  %body
+  - if current_user
+    .col-xs-12
+      %ul{class: "nav nav-tabs navbar-default"}
+        %li{role: "presentation", class: "active"}
+          = link_to "home", root_path 
+        - if current_user
+          %li{role: "presentation"}
+            =link_to "Profile", profile_path(current_user.id => :user_id)
+        %ul{class: "nav navbar-right"}
+          %li{role: "presentation", class: "active"}
+            - if current_user
+              = link_to current_user.email,  destroy_user_session_path, :method => :DELETE
+            - else
+              = link_to "Login", new_user_session_path 
+    .container-fluid
+      .col-xs-12
+        %h1 Welcome
+      .col-xs-4
+        %h2 Bienvenida
+      .col-xs-8    
+        %h1 Detalles del usuario
+        .col-xs-4.col-xs-offset-8
+          %h4
+            = link_to "Editar Informacion", edit_user_registration_path(current_user)
+        .col-xs-12
+          %hr
+          %h2 Email
+          = link_to @information.email
+          %h2 Creado
+          = link_to @information.created_at
+      .col-xs-12
+        %hr
+      .col-xs-6.col-xs-offset-5
+        %h3 deslogue
+  - else
+    :javascript
+      window.location.href = "/users/sign_in"
+  %footer

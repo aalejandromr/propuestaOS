@@ -1,0 +1,23 @@
+- @course.each do |c|
+  = link_to "Regresar", specific_course_admins_courses_path(:course_id => c.id)
+.reveal
+  .slides
+    - @contents.each do |value, key|
+      %section{"data-transition": "convex"}
+        %h3= value
+    %section{"data-transition": "zoom"}
+      %h3
+        Gracias por utilizar 
+      %p{class: "fragment grow"}
+        OpenSkool
+    %section
+:javascript
+    if(document.URL.indexOf("#")==-1)
+    {
+    // Set the URL to whatever it was plus "#".
+    current_url = document.URL+"#";
+    location = "#";
+    //Reload the page
+    location.reload(true);
+    }
+    

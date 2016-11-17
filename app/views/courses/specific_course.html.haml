@@ -19,8 +19,6 @@
         %h1 Welcome
       .col-xs-4
         %h2 Bienvenid
-      .col-xs-1
-        = link_to "Adjuntar", new_attachment_path(:course_attachment_id => :course_id)
       .col-xs-7    
         - @specific_course.each do |c|
           .col-xs-12

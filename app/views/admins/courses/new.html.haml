@@ -1,0 +1,9 @@
+= simple_form_for [@course], :url => admins_courses_path , class: 'form-inline' do |f|
+  %br
+  %label.block
+    = f.input :nombre, label: "Nombre"
+    = f.input :descripcion, label: "Digite la descripción del Curso"
+  .hide
+    = f.input :modulo_id, input_html: {value: @modulo_id.id}
+  %br
+  = f.button :submit, class: "btn btn-success"

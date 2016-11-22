@@ -89,10 +89,17 @@ Rails.application.routes.draw do
       collection do
         get :info_courses
         get :specific_course
+        get :create
       end
     end
 
     resources :attachments do
+      collection do
+        get :create
+      end
+    end
+
+    resources :modulos do
       collection do
         get :create
       end

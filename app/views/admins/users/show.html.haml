@@ -28,8 +28,10 @@
         - @modulos.each do |c|
           %hr
           %h2
-          - if  current_user
+          - if current_user
             = link_to c.nombre, info_courses_admins_courses_path(:modulo_id => c.id)
+            %button{type: "button", class: "btn btn-default"}
+              %span{class: "glyphicon glyphicon-align-right"}
             %p= c.descripcion
             %p= c.created_at
           - else

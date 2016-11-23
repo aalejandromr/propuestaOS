@@ -10,9 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap-datepicker3
- *= require reveal.css
- *= require blood.css
  */
 
 @import "bootstrap-sprockets";
@@ -20,6 +17,8 @@
 @import "font-awesome";
 @import "compass";
 @import "fancybox";
+@import "reveal.css";
+@import "blood.css";
 
 body{
   overflow: auto;

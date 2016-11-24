@@ -115,7 +115,11 @@ Rails.application.routes.draw do
   get 'courses/:course_id/attachment/:course_attachment_id' => 'attachments#new', :via => [:post], :as => :new_attachment
   get 'files' => 'files#show', :via => [:get], :as => :convert_attachment
   get 'courses' => 'courses#nocourses', :via => [:get], :as => :nocourses
+  get 'evaluacion/:course_id' => 'evaluacions#show', :as => :show_evaluaciones
   resources :modulos
   resources :courses
   resources :attachments
+  resources :evaluacions
+  resources :preguntas
+  resources :respuestas
 end

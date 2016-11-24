@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124164522) do
+ActiveRecord::Schema.define(version: 20161124221813) do
 
   create_table "attachments", force: true do |t|
     t.integer  "course_id"
@@ -31,9 +31,31 @@ ActiveRecord::Schema.define(version: 20161124164522) do
     t.string   "file_name"
   end
 
+  create_table "evaluacions", force: true do |t|
+    t.integer  "course_id"
+    t.string   "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "modulos", force: true do |t|
     t.string   "nombre"
     t.string   "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pregunta", force: true do |t|
+    t.integer  "evaluacion_id"
+    t.string   "pregunta"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "respuesta", force: true do |t|
+    t.integer  "pregunta_id"
+    t.string   "respuesta"
+    t.boolean  "correcta",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

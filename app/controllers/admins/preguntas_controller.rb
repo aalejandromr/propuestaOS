@@ -1,0 +1,1 @@
+preguntas_controller.rb

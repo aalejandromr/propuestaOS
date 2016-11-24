@@ -10,7 +10,7 @@ class CoursesController < ApplicationController
   def specific_course
     @specific_course = Course.where(id: params[:course_id])
     @attachments = Attachment.where(course_id: params[:course_id]).order(:order)
-    @course = Course.new
+    @evaluaciones = Evaluacion.where(course_id: params[:course_id])
     #@attachments = Attachment.joins(:course).where(attachments: { course_id: params[:course_id]})
   end
 

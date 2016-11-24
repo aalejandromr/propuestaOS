@@ -26,4 +26,13 @@
 #Attachment.update(9, :order => '2')
 #Attachment.update(10, :order => '4')
 #Attachment.update(11, :order => '5')
-UserCourses.create(course_id: 1, user_id: 2)
+#UserCourses.create(course_id: 1, user_id: 2)
+
+#Evaluacion.create(course_id: 1, descripcion: 'Evaluación Primera Semana')
+#Pregunta.create(evaluacion_id: 1, pregunta: '¿Qué lenguaje se usó para crear esta aplicación?')
+#Respuesta.create(pregunta_id: 1, respuesta: 'Ruby', correcta: true)
+#Respuesta.create(pregunta_id: 1, respuesta: 'PHP')
+#Respuesta.create(pregunta_id: 1, respuesta: 'Java')
+#Respuesta.create(pregunta_id: 1, respuesta: 'JavaScript')
+
+

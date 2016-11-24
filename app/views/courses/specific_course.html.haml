@@ -36,6 +36,7 @@
             %p= c.descripcion
             %p= c.created_at
         %ul{class: "sortable ui-sortable"}
+          %h4 Contenido
           - @attachments.each do |c|
             %div{id: c.id, course: c.course_id,class: "col-xs-12 ui-sortable-handle", :style => "position: relative; left: 0px;"}
               %h3
@@ -50,6 +51,9 @@
                   = link_to "#{c.file_file_name}", convert_attachment_path(:attachment_file => c.file_file_name, :file_id => c.id.to_s) 
               %p= c.file_content_type
               %p= c.file_updated_at
+          %h4 Evaluaciones
+          - @evaluaciones.each do |e|
+            = link_to e.descripcion, show_evaluaciones_path(:evaluacion_id => e.id)
       .col-xs-12
         %hr
       .col-xs-6.col-xs-offset-5

@@ -109,10 +109,12 @@ Rails.application.routes.draw do
   end
   
   get 'users/:user_id' => 'users#profile', :via => [:post], :as => :profile
+  get 'cursos/:id' => 'usercourses#show', :via => [:POST], :as => :mycourses
   get 'modulos/:modulo_id' => 'courses#info_courses', :via => [:post], :as => :courses
   get 'courses/:course_id' => 'courses#specific_course', :via => [:post], :as => :specific_course
   get 'courses/:course_id/attachment/:course_attachment_id' => 'attachments#new', :via => [:post], :as => :new_attachment
   get 'files' => 'files#show', :via => [:get], :as => :convert_attachment
+  get 'courses' => 'courses#nocourses', :via => [:get], :as => :nocourses
   resources :modulos
   resources :courses
   resources :attachments

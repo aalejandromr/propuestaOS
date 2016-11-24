@@ -50,3 +50,4 @@ gem "paperclip"
 gem 'fancybox2-rails'
 gem 'devise'
 gem 'doc_ripper'
+gem 'yomu'

@@ -26,3 +26,4 @@
 #Attachment.update(9, :order => '2')
 #Attachment.update(10, :order => '4')
 #Attachment.update(11, :order => '5')
+UserCourses.create(course_id: 1, user_id: 2)

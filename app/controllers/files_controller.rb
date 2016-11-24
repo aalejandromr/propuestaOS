@@ -4,6 +4,8 @@ class FilesController < ApplicationController
     path = File.join Rails.root, 'public', 'system', 'attachments', 'files', '000', '000', params[:file_id], 'original'
     file = File.open(File.join(path, params[:attachment_file]), 'rb')
     @letras = file.read
+    #@files = file.read
+    #@letras = yomu.read :text, @files
     @words = @letras.scan(/[a-zA-Z]+/)
     @words = @letras.split('.')
     @contents = Hash.new(0)

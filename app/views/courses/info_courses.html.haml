@@ -9,6 +9,14 @@
         - if current_user
           %li{role: "presentation"}
             =link_to "Profile", profile_path(:user_id => current_user.id)
+          %li{role: "presentation"}
+            = link_to "Mis cursos", mycourses_path(:id => current_user.id)
+          %li{role: "presentation"}
+            = link_to "Comunidad"
+          %li{role: "presentation"}
+            = link_to "Mensajes"
+          %li{role: "presentation"}
+            = link_to "Soporte"
         %ul{class: "nav navbar-right"}
           %li{role: "presentation", class:"active"}
             - if current_user
@@ -21,7 +29,7 @@
       .col-xs-4
         %h2 Bienvenida
       .col-xs-8    
-        %h1 Cursos
+        %h1 Modulos
         - @info_courses.each do |c|
           .col-xs-12
             %hr

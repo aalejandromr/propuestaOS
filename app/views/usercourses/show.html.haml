@@ -4,7 +4,7 @@
   - if current_user
     .col-xs-12
       %ul{class: "nav nav-tabs navbar-default"}
-        %li{role: "presentation", class: "active"}
+        %li{role: "presentation", class:"active"}
           = link_to "home", root_path 
         - if current_user
           %li{role: "presentation"}
@@ -18,7 +18,7 @@
           %li{role: "presentation"}
             = link_to "Soporte"
         %ul{class: "nav navbar-right"}
-          %li{role: "presentation", class: "active"}
+          %li{role: "presentation", class:"active"}
             - if current_user
               = link_to current_user.email,  destroy_user_session_path, :method => :DELETE
             - else
@@ -29,16 +29,14 @@
       .col-xs-4
         %h2 Bienvenida
       .col-xs-8    
-        %h1 Detalles del usuario
-        .col-xs-4.col-xs-offset-8
-          %h4
-            = link_to "Editar Informacion", edit_user_registration_path(current_user)
-        .col-xs-12
-          %hr
-          %h2 Email
-          = link_to @information.email
-          %h2 Creado
-          = link_to @information.created_at
+        %h1 Cursos
+        - @courses.each do |c|
+          .col-xs-12
+            %hr
+            %h2
+            = link_to c.nombre, courses_path(:modulo_id => c.id)
+            %p= c.descripcion
+            %p= c.created_at
       .col-xs-12
         %hr
       .col-xs-6.col-xs-offset-5

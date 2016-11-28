@@ -35,4 +35,17 @@
 #Respuesta.create(pregunta_id: 1, respuesta: 'Java')
 #Respuesta.create(pregunta_id: 1, respuesta: 'JavaScript')
 
+#Pregunta.create(evaluacion_id: 1, pregunta: '¿Quién desarrollo la aplicación?')
+#Respuesta.create(pregunta_id: 2, respuesta: 'Programa todo')
+#Respuesta.create(pregunta_id: 2, respuesta: 'Ninja Web')
+#Respuesta.create(pregunta_id: 2, respuesta: 'Code Castle', correcta: true)
+#Respuesta.create(pregunta_id: 2, respuesta: 'Queen test')
+
+#Pregunta.create(evaluacion_id: 1, pregunta: '¿Cuando se fundo microsoft?')
+#Respuesta.create(pregunta_id: 3, respuesta: '2001')
+#Respuesta.create(pregunta_id: 3, respuesta: '1989')
+#Respuesta.create(pregunta_id: 3, respuesta: '1999')
+#Respuesta.create(pregunta_id: 3, respuesta: '1975', correcta: true)
+
+#EvaluacionEstudiante.create(user_id: 2, evaluacion_id: 1)
 

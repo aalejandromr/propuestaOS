@@ -1,1 +1,3 @@
-new.html.haml
+- @evaluacionestudiante.each do |e|
+  /%p= number_to_percentage(e.nota, precision: 2)
+  %p= number_with_precision(e.nota, precision: 2)

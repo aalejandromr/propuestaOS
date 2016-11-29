@@ -105,6 +105,10 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :estudianterespondes
+    resources :preguntas
+    resources :respuestas
+    resources :evaluacions
 
   end
   

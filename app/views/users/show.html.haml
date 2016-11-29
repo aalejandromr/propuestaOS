@@ -1,34 +1,6 @@
-%html
-  %head
-  %body 
-    .col-xs-12
-      %ul{class: "nav nav-tabs navbar-default"}
-        %li{role: "presentation", class: "active"}
-          = link_to "home" 
-        - if current_user
-          %li{role: "presentation"}
-            =link_to "Profile", profile_path(:user_id => current_user.id)
-          %li{role: "presentation"}
-            = link_to "Mis cursos", mycourses_path(:id => current_user.id)
-          %li{role: "presentation"}
-            = link_to "Comunidad"
-          %li{role: "presentation"}
-            = link_to "Mensajes"
-          %li{role: "presentation"}
-            = link_to "Soporte"
-        %ul{class: "nav navbar-right"}
-          %li{role: "presentation", class: "active"}
-            - if current_user
-              = link_to current_user.email,  destroy_user_session_path, :method => :DELETE
-            - else
-              = link_to "Login", new_user_session_path
-      .container-fluid
-        .col-xs-12
-          %h1 Welcome
-        .col-xs-4
-          %h2 Bienvenida
-      .col-xs-12
-        %hr
-      .col-xs-6.col-xs-offset-5
-        %h3 deslogue
-  %footer
+%body
+  .col-xs-12
+    %hr
+  .col-xs-6.col-xs-offset-5
+    %h3 deslogue
+%footer

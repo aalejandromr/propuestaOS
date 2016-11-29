@@ -1,45 +1,24 @@
-%html
-  %head
-  %body
-    .col-xs-12
-      %ul{class: "nav nav-tabs navbar-default"}
-        %li{role: "presentation", class: "active"}
-          = link_to "home", admins_user_path 
-        - if current_user
-          %li{role: "presentation"}
-            = link_to "Profile", profile_admins_users_path(:user_id => current_user.id)
-        %ul{class: "nav navbar-right"}
-          %li{role: "presentation", class: "active"}
-            - if current_user
-              = link_to current_user.email,  destroy_user_session_path, :method => :DELETE
-            - else
-              = link_to "Login", new_user_session_path 
-    .container-fluid
-      .col-xs-12
-        %h1 Welcome
-      .col-xs-4
-        %h2 Bienvenida
-      .col-xs-8    
-        .col-xs-8
-          %h1 Modulos
-        .col-xs-4
-          = link_to "Agregar Nuevo", new_admins_modulo_path
-      .col-xs-8.col-xs-offset-3
-        - @modulos.each do |c|
-          %hr
-          %h2
-          - if current_user
-            = link_to c.nombre, info_courses_admins_courses_path(:modulo_id => c.id)
-            %button{type: "button", class: "btn btn-default"}
-              %span{class: "glyphicon glyphicon-align-right"}
-            %p= c.descripcion
-            %p= c.created_at
-          - else
-            = link_to c.nombre, new_user_session_path  
-            %p= c.descripcion
-            %p= c.created_at
-      .col-xs-12
-        %hr
-      .col-xs-6.col-xs-offset-5
-        %h3 deslogue
-  %footer
+.col-xs-8    
+  .col-xs-8
+    %h1 Modulos
+  .col-xs-4
+    = link_to "Agregar Nuevo", new_admins_modulo_path
+.col-xs-8.col-xs-offset-3
+  - @modulos.each do |c|
+    %hr
+    %h2
+    - if current_user
+      = link_to c.nombre, info_courses_admins_courses_path(:modulo_id => c.id)
+      %button{type: "button", class: "btn btn-default"}
+        %span{class: "glyphicon glyphicon-align-right"}
+      %p= c.descripcion
+      %p= c.created_at
+    - else
+      = link_to c.nombre, new_user_session_path  
+      %p= c.descripcion
+      %p= c.created_at
+.col-xs-12
+  %hr
+.col-xs-6.col-xs-offset-5
+  %h3 deslogue
+%footer

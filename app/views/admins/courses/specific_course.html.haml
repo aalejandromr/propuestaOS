@@ -44,6 +44,10 @@
                   = link_to "#{c.file_file_name}", admins_file_path(:attachment_file => c.file_file_name, :id => c.id.to_s) 
               %p= c.file_content_type
               %p= c.file_updated_at
+          %h4 Evaluaciones
+          = link_to "Nueva Evaluacion", new_admins_evaluacion_path(:course_id => params[:course_id]) 
+          - @evaluaciones.each do |e|
+            = link_to e.descripcion
       .col-xs-12
         %hr
       .col-xs-6.col-xs-offset-5

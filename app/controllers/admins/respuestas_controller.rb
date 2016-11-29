@@ -1,1 +1,0 @@
-respuestas_controller.rb

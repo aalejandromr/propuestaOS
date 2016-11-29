@@ -41,13 +41,14 @@
       <div class="col-xs-8">
         <% @preguntas.each do |p| %>
           <div class="col-xs-12">
-          <input id= "evaluacion_id" type="hidden" value=<%= p.evaluacion_id%>>
+            <input id= "evaluacion_id" type="hidden" value=<%= p.evaluacion_id%>>
             <h4> <%= p.pregunta %> </h4>
             <ul class="radio-form">
             <div class="form-container">
-              <form>
+            <form>
             <% @respuestas.each do |r| %>
               <% if p.id == r.pregunta_id %>
+                <% if p.tipo == 1 %>
                     <input id= "pregunta_id" type="hidden" value=<%= r.pregunta_id%>>
                   <li>
                     <input type="radio" id= <%= r.id %> name="selector" value= <%= r.id%> >
@@ -55,9 +56,14 @@
                     
                     <div class="check"></div>
                   </li>
+                <% elsif p.tipo == 2 %>
+                  <input type="text" name="respuesta">
+                <% elsif p.tipo == 3 %>
+                  <input type="checkbox" name="respuesta-checkbox" value= <%= r.id%>> <%= r.respuesta%>
+                <% end %>
               <% end %>
             <% end %>
-          </form>
+            </form>
             </div>
             </ul>
           </div>
@@ -86,20 +92,20 @@
     });
     pregunta_id = $("#pregunta_id").val();
   $.ajax({
-    type: "get",
-    url: "../respondes",
-    data: {
-      user_id: user_id,
-      pregunta_id: pregunta_id,
-      respuestas: datos,
-      evaluacion_id: evaluacion_id
-    },
-    success: function(data) {
-            alert(data);
-    },
-    error: function(data) {
-      alert("No entra");
-    }
-  });
+      type: "get",
+      url: "../rspondes",
+      data: {
+        user_id: user_id,
+        pregunta_id: pregunta_id,
+        respuestas: datos,
+        evaluacion_id: evaluacion_id
+      },
+      success: function(data) {
+              alert(data);
+      },
+      error: function(data) {
+        alert("No entra");
+      }
+    });
   });
 </script>

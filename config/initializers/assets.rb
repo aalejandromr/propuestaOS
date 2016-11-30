@@ -8,4 +8,6 @@ Rails.application.config.assets.version = '1.0'
 end
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
+%w( files attachments courses estudianterespondes evaluacionestudiantes evaluacions files modulos preguntas respuestas usercourses users).each do |controller|
+  Rails.application.config.assets.precompile += ["admins/#{controller}.js", "admins/#{controller}.css"]
+end

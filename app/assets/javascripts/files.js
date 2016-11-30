@@ -4743,20 +4743,4 @@
 
 }));
 
-$(document).ready(function(){
 
-  Reveal.initialize({
-        center: true,
-        history: true,
-
-        // transition: 'slide',
-        transitionSpeed: 'slow',
-        backgroundTransition: 'slide',
-        controls: true,
-        slideNumber: true,
-        touch: true,
-        loop: false,
-        help: true
-        });
-
-});

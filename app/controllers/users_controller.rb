@@ -4,9 +4,6 @@ class UsersController < ApplicationController
     @users = User.all
     @courses = Course.all
     @modulos = Modulo.all
-    if current_user.rol == 1
-      redirect_to admis_users_path
-    end
   end
 
   def show

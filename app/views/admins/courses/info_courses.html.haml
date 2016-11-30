@@ -1,20 +1,6 @@
 %html
   %head
-  %body
-  - if current_user
-    .col-xs-12
-      %ul{class: "nav nav-tabs navbar-default"}
-        %li{role: "presentation", class:"active"}
-          = link_to "home", admins_user_path(:id => current_user.id)
-        - if current_user
-          %li{role: "presentation"}
-            =link_to "Profile", profile_admins_users_path(:user_id => current_user.id)
-        %ul{class: "nav navbar-right"}
-          %li{role: "presentation", class:"active"}
-            - if current_user
-              = link_to current_user.email,  destroy_user_session_path, :method => :DELETE
-            - else
-              = link_to "Login", new_user_session_path 
+  %body 
     .container-fluid
       .col-xs-12
         %h1 Welcome
@@ -36,7 +22,4 @@
         %hr
       .col-xs-6.col-xs-offset-5
         %h3 deslogue
-  - else
-    :javascript
-      window.location.href = "/users/sign_in"
   %footer

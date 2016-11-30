@@ -9,7 +9,7 @@
 <body>
 
 <div class="col-xs-12">
-      <ul class= "nav nav-tabs navbar-default">
+      <ul class= "container-fluid nav nav-tabs navbar-default">
           <li role= "presentation" class= "active">
           <%= link_to "Home", root_path %>
           </li>
@@ -38,15 +38,16 @@
               <% end %>
             </li>
         </ul>
+        <% else %>
+          <ul class= "nav navbar-right">
+          <li role: "presentation" class: "active">
+          <%= link_to "Login", new_user_session_path %>
+          </li>
+          </ul>
         <% end %>
       </ul>
     <div class="container-fluid">
-      <div class="col-xs-12">
-        <h1> Welcome </h1>
-      </div>
-      <div class="col-xs-4">
-        <h2> Bienvenida </h2>
-      </div>
+      
       <%= yield %>
     </div>
 </div>

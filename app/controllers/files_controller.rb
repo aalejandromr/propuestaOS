@@ -1,6 +1,4 @@
 class FilesController < ApplicationController
-    layout false
-
   def show
     path = File.join Rails.root, 'public', 'system', 'attachments', 'files', '000', '000', params[:file_id], 'original'
     file = File.open(File.join(path, params[:attachment_file]), 'rb')

@@ -1,41 +1,52 @@
 <div class="col-xs-12">
-      <ul class= "nav nav-tabs navbar-default">
-          <li role= "presentation" class= "active">
-          <%= link_to "Home", root_path %>
-          </li>
-          <% if current_user %>
-          <li role= "presentation">
-            <%= link_to "Profile", profile_path(:user_id => current_user.id) %>
-          </li>
-          <li role= "presentation">
-            <%= link_to "Mis cursos", mycourses_path(:id => current_user.id) %>
-          </li>
-          <li role= "presentation">
-            <%= link_to "Comunidad" %>
-          </li>
-          <li role= "presentation">
-            <%= link_to "Mensajes" %>
-          </li>
-          <li role= "presentation">
-            <%= link_to "Soporte" %>
-          </li>
-          <ul class= "nav navbar-right">
-            <li role: "presentation" class:"active">
-              <% if current_user %>
-                <%= link_to current_user.email,  destroy_user_session_path, method: :DELETE %>
-              <% else %>
-                <%= link_to "Login", new_user_session_path %>
-              <% end %>
-            </li>
-        </ul>
-        <% end %>
-      </ul>
-    <div class="container-fluid">
+      
       <div class="col-xs-12">
-        <h1> Welcome </h1>
-      </div>
-      <div class="col-xs-4">
-        <h2> Bienvenida </h2>
-      </div>
+        <div class="col-xs-6">
+          <form id="evaluacion">
+            <label> Agrega descripcion de la evaluacion </label>
+            <input type="text" name="descripcion">
+          </form>
+        </div>
+        <div class="col-xs-6">
+          <button id="text" type="submit" class="btn btn-primary">
+          Pregunta Abierta
+        </button>
+        <button id="radio-button" type="submit" class="btn btn-primary">
+          Seleccion Multiple
+        </button>
+        <button id="checkbox" type="submit" class="btn btn-primary">
+          Seleccion Variada
+        </button>
+        </div>
     </div>
+    <button id='agregar' type='submit' class='btn btn-primary btn-block'>
+      Agregar
+    </button>
 </div>
+
+<script type="text/javascript">
+var num = 1;
+$("#text").click(function (){
+  var text = "<div class='col-xs-12'><form id='pregunta'> " + "<label> " + num + ". pregunta: </label>" + "<textarea name='pregunta' rows='3' cols='40' > " + " </textarea> </form></div>";
+  $('body').append(text);
+  num = num + 1;
+});
+
+$("#radio-button").click(function(){
+var text = "<div class='col-xs-12'> <div class='col-xs-9'> <form id='pregunta'> <label> " + num + ". Pregunta </label>" + "<input type='text' name='pregunta'> (Agrega las posibles respuestas y selecciona la correcta)</form> </div> <div class='col-xs-3'> <button id='boton' class='btn btn-primary'> " + "Agregar posible respuesta" + "</button> </div> </div>";
+$('body').append(text);
+num = num + 1;
+});
+
+$("button").click(function (){
+  alert('Entra');
+});
+
+$("#agregar").click(function(){
+    var form = $('form').serializeArray();
+    var datos = [];
+    $(form).each(function(index, value){
+    alert(index + ": " + value.value);
+    });
+  });
+</script>

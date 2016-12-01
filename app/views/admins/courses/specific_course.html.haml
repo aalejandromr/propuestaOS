@@ -28,10 +28,25 @@
               = link_to "#{c.file_file_name}", admins_file_path(:attachment_file => c.file_file_name, :id => c.id.to_s) 
           %p= c.file_content_type
           %p= c.file_updated_at
-      %h4 Evaluaciones
-      = link_to "Nueva Evaluacion", new_admins_evaluacion_path(:course_id => params[:course_id]) 
-      - @evaluaciones.each do |e|
-        = link_to e.descripcion
+    .col-xs-12.course-box
+      .col-xs-12
+        %hr
+      .col-xs-12
+        .col-xs-6
+          %h4 Evaluaciones
+        .col-xs-6
+          = link_to "Nueva Evaluacion", new_admins_evaluacion_path(:course_id => params[:course_id])
+        .col-xs-12 
+          - @evaluaciones.each do |e|
+            = link_to e.descripcion, admins_evaluacion_path(:id => e.id)
+      .col-xs-12
+        %hr
+      .col-xs-12
+        .col-xs-6
+          %h4 Actividades
+        .col-xs-6
+          = link_to "Nueva Actividad", new_admins_evaluacion_path(:course_id => params[:course_id]), :disabled => true
+          .col-xs-12 
   .col-xs-12
     %hr
   .col-xs-6.col-xs-offset-5
@@ -41,6 +56,7 @@
   $(".ui-sortable").sortable({
     revert: true
   });
+  $(".course-box").disableSelection();
   $( "ul, li" ).disableSelection();
   $( ".ui-sortable" ).sortable({
     stop: function(event, ui){
@@ -53,7 +69,7 @@
           order: $(ui.item).index()+1
         },
         success: function(data) {
-          $.fancybox(data, {
+          $.fancybox("<div><h1>Actualizado correctamente</h1></div>", {
                   // API options here
                   helpers:  {
                   title : {

@@ -35,7 +35,8 @@ class Admins::FilesController < ApplicationController
           else
                 
           end
-      end
+      end 
+    render layout: false
   end
 
   def show

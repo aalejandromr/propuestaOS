@@ -1,6 +1,12 @@
 class Admins::EvaluacionsController < ApplicationController
   
-  def new
+  def create_evaluacion
+    #@evaluacion = Evaluacion.create(course_id: params[:data[0]], descripcion: params[:descripcion]);
+    @prueba = params[:data]
+    @prueba2
+    @prueba.each do |r|
+      @prueba2 = r.name
+    end
 
   end
 
@@ -12,7 +18,7 @@ class Admins::EvaluacionsController < ApplicationController
   private
 
   def evaluacion_params
-   params.require(:course).permit(:nombre, :descripcion, :modulo_id)
+   params.require(:evaluacion).permit(:correctas_radio, :descripcion, :radio, :text)
   end
 
   

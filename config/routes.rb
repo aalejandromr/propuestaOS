@@ -108,7 +108,11 @@ Rails.application.routes.draw do
     resources :estudianterespondes
     resources :preguntas
     resources :respuestas
-    resources :evaluacions
+    resources :evaluacions do
+      collection do
+        get :create_evaluacion
+      end
+    end
 
   end
   

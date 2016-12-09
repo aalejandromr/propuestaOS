@@ -58,11 +58,11 @@ $("#add-text").click(function (){
 
 $("#add-radio-button").click(function(){
   var button = $("<button id='radio' class='btn btn-primary'> Agregar posible respuesta </button>");
-  var text = $("<div class='agregados'> <div class='col-xs-12'> <div class='col-xs-9'> <form id='pregunta'> <label> " + num + ". Pregunta </label>" + "<input type='text' name='pregunta_rb' id='pregunta_radio'> (Agrega las posibles respuestas y selecciona la correcta) <a id='remove-radio'> <ul class='nav nav-pills'> <li> Eliminar </a> </li> </ul> </form> </div> <div class='col-xs-3'> " + $(button)[0].outerHTML + "</div> <div class='col-xs-12'> <form> <div class='col-xs-12 radio-container'> </form> </div> </div> </div> </div>");
+  var text = $("<div class='agregados'> <div class='col-xs-12'> <div class='col-xs-9'> <form id='pregunta'> <label> " + num + ". Pregunta </label>" + "<input type='text' name='pregunta_rb' id='pregunta_radio'> (Agrega las posibles respuestas y selecciona la correcta) <a id='remove-radio'> <ul class='nav nav-pills'> <li> Eliminar </a> </li> </ul> </form> </div> <div class='col-xs-3'> " + $(button)[0].outerHTML + "</div> <div class='col-xs-12'> <form> </form> </div> </div> </div>");
   $('.module-container').append($(text)[0].innerHTML);
   
   $("button#radio").unbind().click(function(){
-    var radio = $("<input type='radio' name='selector'> <input type='text' name='radio_respuesta'>");
+    var radio = $("<div class='col-xs-3'> <div class='col-xs-2'><input type='radio' name='selector'> </div> <div class='col-xs-10'> <input type='text' name='radio_respuesta'> </div> </div>");
      $($($($($(this).parent()).siblings()).last()).children()).append(radio);
   });
 
@@ -76,12 +76,13 @@ $("#add-radio-button").click(function(){
 
 $("#add-checkbox").click(function(){
   var button = $("<button id='checkbox' class='btn btn-primary'> Agregar posible respuesta </button>");
-  var text = $("<div class='agregados'> <div class='col-xs-12'> <div class='col-xs-9'> <form id='pregunta'> <label> " + num + ". Pregunta </label>" + "<input type='text' name='pregunta_checkbox' id='pregunta_radio'> (Agrega las posibles respuestas y selecciona las correctas) <ul class='nav nav-pills'> <li> <a id='remove-checkbox'> Eliminar </a> </li> </ul> </form>  </div> <div class='col-xs-3'> " + $(button)[0].outerHTML + "</div> <div class='col-xs-12'> <form> <div class='col-xs-12 radio-container'> </form> </div> </div> </div> </div>");
+  var text = $("<div class='agregados'> <div class='col-xs-12'> <div class='col-xs-9'> <form id='pregunta'> <label> " + num + ". Pregunta </label>" + "<input type='text' name='pregunta_checkbox' id='pregunta_radio'> (Agrega las posibles respuestas y selecciona las correctas) <ul class='nav nav-pills'> <li> <a id='remove-checkbox'> Eliminar </a> </li> </ul> </form>  </div> <div class='col-xs-3'> " + $(button)[0].outerHTML + "</div> <div class='col-xs-12'> <form> </form> </div> </div> </div> </div>");
+  
   $('.module-container').append($(text)[0].innerHTML);
   
 
   $("button#checkbox").unbind().click(function(){
-    var checkbox = $("<input type='checkbox' name='seleccionada' value=" + true + "> <input type='text' name='checkbox_respuesta'>");
+    var checkbox = $("<div class='col-xs-3'> <div class='col-xs-2'> <input type='checkbox' name='seleccionada' value=" + true + "> </div> <div class='col-xs-10'> <input type='text' name='checkbox_respuesta'> </div> </div>");
     $($($($($(this).parent()).siblings()).last()).children()).append(checkbox);
   });
 
@@ -107,7 +108,7 @@ $("button#agregar").click(function(){
     var rfcorrecta = 0;
     var descripcion;
     var course_id = $('#course_id').val();
-    console.log(form);
+
     $(form).each(function(index, value){
 
         if(value.name == 'descripcion' && value.value != "")
@@ -144,7 +145,8 @@ $("button#agregar").click(function(){
             }
         }
     });
-    
+
+    /*
 
     $(correctas_radios).each(function (index, radios)
     {
@@ -163,11 +165,12 @@ $("button#agregar").click(function(){
     $(textareas).each(function (index, texts){
       console.log("TexAreas: " + texts);
     });
-
+    */
     $.ajax({
       url: "/admins/evaluacions/create_evaluacion",
       data: {
-        data: form,
+        descripcion: descripcion,
+        form: form,
         course_id: course_id
       },
     });

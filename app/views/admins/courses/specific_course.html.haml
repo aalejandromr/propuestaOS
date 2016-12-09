@@ -39,6 +39,8 @@
         .col-xs-12 
           - @evaluaciones.each do |e|
             = link_to e.descripcion, admins_evaluacion_path(:id => e.id)
+            %br
+            %hr
       .col-xs-12
         %hr
       .col-xs-12
